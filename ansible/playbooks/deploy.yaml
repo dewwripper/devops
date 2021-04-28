@@ -1,0 +1,11 @@
+- hosts: servers
+  tasks:
+    - name: Install nginx
+      become: yes
+      apt:
+        name: nginx
+        update_cache: yes
+
+    - name: Make new file
+      shell: >
+        touch test.txt
